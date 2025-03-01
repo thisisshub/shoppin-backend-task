@@ -28,11 +28,13 @@ Quick Start
 
 Project Structure
 ---------------
+```
 /backend
   ├── /spiders           # Crawler implementations
   ├── /crawler           # Django app & models
   ├── /management        # CLI commands
   └── docker-compose.yaml # Service configuration
+```
 
 Key Features
 -----------
