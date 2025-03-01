@@ -28,7 +28,7 @@ Quick Start
 
 Project Structure
 ---------------
-```
+```bash
 /backend
   ├── /spiders           # Crawler implementations
   ├── /crawler           # Django app & models
@@ -38,36 +38,36 @@ Project Structure
 
 Key Features
 -----------
-• Multi-site crawling
-• Infinite scroll handling
-• Automatic data storage
-• Category-based crawling
-• Admin dashboard
-• Containerized services
+- Multi-site crawling
+- Infinite scroll handling
+- Automatic data storage
+- Category-based crawling
+- Admin dashboard
+- Containerized services
 
 ⚠️ Current Status
 ---------------
-• Alpha version (0.1.0)
-• Development build
-• Basic error handling
-• Limited scalability
-• Requires monitoring
+- Alpha version (0.1.0)
+- Development build
+- Basic error handling
+- Limited scalability
+- Requires monitoring
 
 Development Setup
 ---------------
 1. Requirements:
-   • Docker & Docker Compose
-   • Python 3.13
-   • Poetry
+   - Docker & Docker Compose
+   - Python 3.13
+   - Poetry
 
 2. Environment:
-   • Copy .env.example to .env
-   • Configure database settings
-   • Set up admin credentials
+   - Copy .env.example to .env
+   - Configure database settings
+   - Set up admin credentials
 
 3. Dependencies:
    ```bash
-   poetry install
+    poetry install
    ```
 
 Usage Examples
@@ -76,19 +76,20 @@ Usage Examples
 docker-compose up -d
 
 # Crawl products
+```bash
 poetry run python manage.py crawl amazon electronics --save-to-db
 poetry run python manage.py crawl bewakoof tshirts --save-to-db
-
+```
 # Access admin interface
 http://localhost:8000/admin
 
 Future Plans
 -----------
-• Error handling improvements
-• Performance optimization
-• Data validation
-• Security enhancements
-• Additional e-commerce sites
+- Error handling improvements
+- Performance optimization
+- Data validation
+- Security enhancements
+- Additional e-commerce sites
 
 Note
 ----
