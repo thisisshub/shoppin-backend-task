@@ -1,0 +1,47 @@
+services:
+  django:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/backend
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - celery
+      - selenium-chrome
+    command: django
+
+  celery:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: celery
+    volumes:
+      - .:/backend
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      
+  redis:
+    image: "redis:latest"
+    command: redis-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - .:/data
+
+  selenium-chrome:
+    image: selenium/standalone-chrome
+    shm_size: '2g'
+    platform: linux/amd64
+    ports:
+      - "4444:4444"
+      - "7900:7900"
+      
+networks:
+  shoppin-network:
